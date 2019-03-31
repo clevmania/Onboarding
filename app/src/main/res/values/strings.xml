@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Onboarding</string>
+    <string name="on_board_msg">Hello Onboard User</string>
 </resources>
