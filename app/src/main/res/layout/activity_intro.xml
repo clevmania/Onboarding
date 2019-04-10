@@ -10,7 +10,7 @@
     <Button
             android:text="Next" android:textColor="@color/colorGradientStart"
             android:drawableTint="@color/colorGradientStart"
-            android:drawableRight="@drawable/ic_arrow_forward" android:background="@color/colorPrimary"
+            android:drawableEnd="@drawable/ic_arrow_forward" android:background="@color/colorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_next" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
@@ -19,29 +19,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            app:tabBackground="@drawable/nav_layout_background"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/btn_next"
-            android:layout_marginEnd="8dp" android:id="@+id/tabLayout">
+            android:layout_marginStart="32dp"
+            android:id="@+id/tl_indicator">
 
-        <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Monday"/>
-
-        <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tuesday"/>
-
-        <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Wednesday"/>
     </com.google.android.material.tabs.TabLayout>
+
     <androidx.viewpager.widget.ViewPager
             android:layout_width="0dp"
             android:layout_height="0dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/tabLayout" android:id="@+id/vp_pager"/>
+            app:layout_constraintBottom_toTopOf="@+id/tl_indicator" android:id="@+id/vp_pager"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
