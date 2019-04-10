@@ -1,10 +1,12 @@
 package com.clevmania.onboarding
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.view.animation.AnimationUtils
 import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.activity_intro.*
 
@@ -33,13 +35,13 @@ class IntroActivity : AppCompatActivity() {
             val currentItem = getItem(+1)
             if (currentItem < 4) {
                 vp_pager.currentItem = currentItem
-            } else {
-
-
-//                val intent = Intent(this@IntroActivity, MainActivity::class.java)
-//                startActivity(intent)
-//                finish()
             }
+        }
+
+        btn_start.setOnClickListener {
+            val intent = Intent(this@IntroActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
@@ -58,6 +60,7 @@ class IntroActivity : AppCompatActivity() {
                         btn_next.visibility = View.INVISIBLE
                         tl_indicator.visibility = View.INVISIBLE
                         btn_start.visibility = View.VISIBLE
+                        btn_start.animation = AnimationUtils.loadAnimation(applicationContext,R.anim.btn_animation)
                     }
                     else -> {
                         btn_next.visibility = View.VISIBLE
